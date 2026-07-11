@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Priya M.",
+    "arcadeGames": 4,
+    "triviaGames": 3,
+    "gamesCompleted": 7,
+    "updatedAt": "2026-07-10"
+  },
+  {
+    "id": "2",
+    "name": "Rahul K.",
+    "arcadeGames": 3,
+    "triviaGames": 2,
+    "gamesCompleted": 5,
+    "updatedAt": "2026-07-09"
+  },
+  {
+    "id": "3",
+    "name": "Ananya S.",
+    "arcadeGames": 2,
+    "triviaGames": 2,
+    "gamesCompleted": 4,
+    "updatedAt": "2026-07-08"
+  }
+]

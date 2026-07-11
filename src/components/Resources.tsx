@@ -1,5 +1,5 @@
 import { RESOURCES, SITE } from '../data/content'
-import { ExternalLink, Mail, ArrowRight } from 'lucide-react'
+import { ExternalLink, Mail, ArrowRight, MessageCircle } from 'lucide-react'
 
 export default function Resources() {
   return (
@@ -50,6 +50,15 @@ export default function Resources() {
             >
               Register on Luma
               <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href={SITE.whatsappGroup}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#25D366] text-white font-semibold rounded-full hover:bg-green-600 transition-colors shadow-lg"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Join WhatsApp
             </a>
             <a
               href={`mailto:${SITE.supportEmail}`}

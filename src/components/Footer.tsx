@@ -1,10 +1,13 @@
 import { SITE } from '../data/content'
 import { Cloud, Heart } from 'lucide-react'
+import DynamicRating from './DynamicRating'
 
 export default function Footer() {
   return (
     <footer className="bg-[#0f1225] text-gray-400 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <DynamicRating className="mb-8 [&_p]:text-gray-400 [&_span]:text-white" />
+
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-[#4285f4] flex items-center justify-center">
@@ -20,14 +23,17 @@ export default function Footer() {
             <a href={SITE.lumaUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Luma Event
             </a>
-            <a href={SITE.arcadeDashboard} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-              Arcade Dashboard
+            <a href={SITE.arcadeCalcUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              ArcadeCalc
+            </a>
+            <a href={SITE.whatsappGroup} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              WhatsApp Group
+            </a>
+            <a href="#leaderboard" className="hover:text-white transition-colors">
+              Leaderboard
             </a>
             <a href="#faq" className="hover:text-white transition-colors">
               FAQ
-            </a>
-            <a href="#resources" className="hover:text-white transition-colors">
-              Resources
             </a>
           </div>
         </div>

@@ -46,6 +46,14 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <a
+              href={SITE.whatsappGroup}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center px-4 py-2.5 bg-[#25D366] text-white text-sm font-semibold rounded-full hover:bg-green-600 transition-colors"
+            >
+              WhatsApp
+            </a>
+            <a
               href={SITE.lumaUrl}
               target="_blank"
               rel="noopener noreferrer"

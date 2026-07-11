@@ -1,7 +1,16 @@
+import { useState } from 'react'
 import { FACILITATORS, SITE } from '../data/content'
-import { MessageCircle, ExternalLink } from 'lucide-react'
+import { MessageCircle, ExternalLink, Copy, Check } from 'lucide-react'
 
 export default function Facilitators() {
+  const [copied, setCopied] = useState(false)
+
+  const copyCode = async () => {
+    await navigator.clipboard.writeText(SITE.referralCode)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   return (
     <section id="facilitators" className="py-20 bg-[#f8f9fc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,27 +44,31 @@ export default function Facilitators() {
         <div className="mt-10 text-center">
           <div className="inline-block bg-white rounded-2xl px-8 py-6 shadow-sm border border-gray-100">
             <p className="text-sm text-gray-500 mb-1">Facilitator Referral Code</p>
-            <p className="font-mono font-bold text-2xl text-[#4285f4]">{SITE.referralCode}</p>
+            <div className="flex items-center justify-center gap-3">
+              <p className="font-mono font-bold text-xl sm:text-2xl text-[#4285f4]">
+                {SITE.referralCode}
+              </p>
+              <button
+                onClick={copyCode}
+                className="p-2 rounded-lg hover:bg-blue-50 text-[#4285f4] transition-colors"
+                title="Copy referral code"
+              >
+                {copied ? <Check className="w-5 h-5 text-[#34a853]" /> : <Copy className="w-5 h-5" />}
+              </button>
+            </div>
             <p className="text-xs text-gray-400 mt-2">Enter when enrolling on the registration form</p>
           </div>
         </div>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={SITE.whatsappChannel}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-full hover:bg-green-600 transition-colors opacity-60 cursor-not-allowed"
-            title="WhatsApp link coming soon"
-          >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp Channel (Coming Soon)
-          </a>
-          <a
             href={SITE.whatsappGroup}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#25D366] font-semibold rounded-full border-2 border-[#25D366] hover:bg-green-50 transition-colors opacity-60 cursor-not-allowed"
-            title="WhatsApp link coming soon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-full hover:bg-green-600 transition-colors"
           >
             <MessageCircle className="w-5 h-5" />
-            WhatsApp Group (Coming Soon)
+            Join WhatsApp Group
           </a>
           <a
             href={SITE.lumaUrl}

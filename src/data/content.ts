@@ -8,9 +8,9 @@ export const SITE = {
   registrationCloseDate: '2026-07-20T23:59:00+05:30',
   programEndDate: '2026-09-14T23:59:00+05:30',
   lumaUrl: 'https://luma.com/5avnzhw7',
-  referralCode: 'Coming Soon',
-  whatsappChannel: '#',
-  whatsappGroup: '#',
+  referralCode: 'GCAF26-IN-QWH-6S5',
+  whatsappGroup: 'https://chat.whatsapp.com/JIKlpuYXmcoEIn1d83ON2C',
+  arcadeCalcUrl: 'https://arcadecalc.netlify.app',
   arcadeDashboard: 'https://go.cloudskillsboost.google/arcade',
   facilitatorProgram: 'https://rsvp.withgoogle.com/events/arcade-facilitator/home',
   subscriptionForm: 'https://forms.gle/2h6xCvY3sW29pw4p7',
@@ -37,6 +37,7 @@ export const FACILITATORS = [
 
 export const NAV_LINKS = [
   { label: 'About', href: '#about' },
+  { label: 'Leaderboard', href: '#leaderboard' },
   { label: 'Timeline', href: '#timeline' },
   { label: 'Setup', href: '#setup' },
   { label: 'Points', href: '#points' },
@@ -142,7 +143,7 @@ export const SETUP_STEPS = [
     items: [
       'Add googlecloudedu-noreply@google.com to contacts',
       'Keep your Public Profile URL ready',
-      'Have your Facilitator Referral Code on hand',
+      `Have your Facilitator Referral Code on hand: ${SITE.referralCode}`,
       'Sign in to the correct Google account',
       'Accept Terms & Conditions before submitting',
     ],
@@ -153,7 +154,7 @@ export const SETUP_STEPS = [
     description: 'Four steps from sign-up to start line.',
     items: [
       'Access the registration link between 13 July and 14 September',
-      'Submit basic details, Skills Boost email, and facilitator referral code',
+      `Submit basic details, Skills Boost email, and referral code ${SITE.referralCode}`,
       'Check inbox (and Spam) for confirmation from googlecloudedu-noreply@google.com',
       'Log into the Arcade dashboard and begin playing active monthly games',
     ],
@@ -288,10 +289,6 @@ export const FAQ = [
     a: 'Seats are first-come, first-served. Additional seats sometimes open — keep checking the dashboard.',
   },
   {
-    q: 'Are participants from last year eligible?',
-    a: 'Yes! If you participated in a previous cohort, you are fully eligible for the 2026 programme.',
-  },
-  {
     q: 'Who can join?',
     a: 'Anyone 18 or older with a laptop/desktop and willingness to learn. No prior cloud experience required.',
   },
@@ -301,14 +298,20 @@ export const FAQ = [
   },
   {
     q: 'What is the referral code?',
-    a: 'Our facilitator referral code will be shared soon. Register via our Luma link to stay updated.',
+    a: `Use referral code ${SITE.referralCode} when enrolling in the Facilitator Programme.`,
+  },
+  {
+    q: 'How do I track my Arcade points?',
+    a: 'Use ArcadeCalc — paste your public Skills Boost profile URL to instantly calculate points, milestones, and swag eligibility.',
   },
 ]
 
 export const RESOURCES = [
+  { label: 'Arcade Points Calculator (ArcadeCalc)', url: SITE.arcadeCalcUrl },
   { label: 'Google Skills Arcade', url: 'https://go.cloudskillsboost.google/arcade' },
   { label: 'Facilitator Programme', url: 'https://rsvp.withgoogle.com/events/arcade-facilitator/home' },
   { label: 'Register with Facilitator (Luma)', url: SITE.lumaUrl },
+  { label: 'WhatsApp Community Group', url: SITE.whatsappGroup },
   { label: 'Arcade Subscription Form', url: 'https://forms.gle/2h6xCvY3sW29pw4p7' },
   { label: 'Profile Settings', url: 'https://www.skills.google/my_account/profile' },
   { label: 'Code of Conduct', url: 'https://rsvp.withgoogle.com/events/arcade-facilitator/code-of-conduct' },
@@ -323,3 +326,12 @@ export const EXPECTATIONS = [
   'Live Sessions & Real-Time Doubt Solving',
   'Networking with Learners Across India',
 ]
+
+export type LeaderboardEntry = {
+  id: string
+  name: string
+  arcadeGames: number
+  triviaGames: number
+  gamesCompleted: number
+  updatedAt: string
+}
