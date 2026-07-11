@@ -1,3 +1,22 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+build
+
+# Environment & secrets — never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+*.token
+*.pat
+
 # Logs
 logs
 *.log
@@ -7,18 +26,27 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Local overrides
 *.local
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Project-specific local files
+handbook_extract.txt
+*.pdf
+
+# Git config backups (local only)
+.gitconfig
+.gitconfig-*
